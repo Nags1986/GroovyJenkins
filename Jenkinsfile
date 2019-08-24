@@ -7,12 +7,12 @@ node('myslave'){
     stage('Git checkout the code'){
         git 'https://github.com/edureka-git/DevOpsClassCodes.git'
     }
-    stage('Compile the Addressbook code'){
+    stage('Compile the checked out code'){
         withMaven(maven:'myMaven'){
             sh 'mvn compile'
         }
     }
-    stage('Package Addressbook code to war'){
+    stage('Package the compiled code to war'){
         withMaven(maven:'myMaven'){
             sh 'mvn package'
         }
