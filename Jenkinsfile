@@ -3,7 +3,7 @@ import hudson.model.*
 import hudson.EnvVars
 import java.net.URL
 
-node('myslave'){
+node{
     stage('Git checkout the code'){
         git 'https://github.com/edureka-git/DevOpsClassCodes.git'
     }
